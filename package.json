@@ -5,6 +5,7 @@
   },
   "name": "TNT2",
   "scripts": {
+    "start Telefono": "vite --host --port 3000",
     "build": "npm run build --workspaces --if-present",
     "prebuild": "npm run prebuild --workspaces --if-present",
     "pretest": "npm run prebuild --workspaces --if-present",
@@ -17,8 +18,15 @@
     "src/TNT2_frontend"
   ],
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "leaflet": "^1.9.4",
+    "react-bootstrap": "^2.10.5",
+    "react-leaflet": "^4.2.1",
+    "react-router-dom": "^6.27.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
