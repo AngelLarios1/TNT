@@ -1,31 +1,21 @@
-import { useState } from 'react';
-import { TNT2_backend } from 'declarations/TNT2_backend';
+import { useEffect, useState } from 'react';
+import { useRestActor } from "@bundly/ares-react";
 
 function App() {
-  const [greeting, setGreeting] = useState('');
+  const backend = useRestActor("backend");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    TNT2_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+  useEffect(() => {
+    const res = backend.get("/working");
+    console.log(res)
+  }, [])
+  
 
-  return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
-  );
+  return(
+    <div>
+    <h1>Hola</h1>
+    <p>Working</p>
+    </div>
+  )
 }
 
 export default App;
